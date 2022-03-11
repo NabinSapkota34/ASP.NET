@@ -210,7 +210,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\index.cshtml" />
-    <Content Include="Views\Default\index.cshtml" />
+    <Content Include="Views\Default\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

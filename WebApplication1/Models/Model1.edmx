@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="empModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="empModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="employe">
           <Key>
             <PropertyRef Name="e_id" />
@@ -25,11 +25,14 @@
           <EntitySet Name="employe" EntityType="Self.employe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="empModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="empEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employes" EntityType="empModel.employe" />
+          <EntitySet Name="employees" EntityType="empModel.employee" />
+        </EntityContainer>
         <EntityType Name="employe">
           <Key>
             <PropertyRef Name="e_id" />
@@ -46,10 +49,6 @@
           <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="salaary" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="empEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="employes" EntityType="Self.employe" />
-          <EntitySet Name="employees" EntityType="Self.employee" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -59,18 +58,18 @@
           <EntitySetMapping Name="employes">
             <EntityTypeMapping TypeName="empModel.employe">
               <MappingFragment StoreEntitySet="employe">
-                <ScalarProperty Name="e_id" ColumnName="e_id" />
-                <ScalarProperty Name="e_name" ColumnName="e_name" />
                 <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="e_name" ColumnName="e_name" />
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="employees">
             <EntityTypeMapping TypeName="empModel.employee">
               <MappingFragment StoreEntitySet="employee">
-                <ScalarProperty Name="e_id" ColumnName="e_id" />
-                <ScalarProperty Name="e_name" ColumnName="e_name" />
                 <ScalarProperty Name="salaary" ColumnName="salaary" />
+                <ScalarProperty Name="e_name" ColumnName="e_name" />
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
