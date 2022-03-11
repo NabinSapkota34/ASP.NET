@@ -16,8 +16,17 @@
     <Property Name="e_name" Type="varchar" MaxLength="20" />
     <Property Name="salaary" Type="int" />
   </EntityType>
+  <EntityType Name="nabin">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="int" Nullable="false" />
+    <Property Name="e_name" Type="varchar" MaxLength="20" />
+    <Property Name="salary" Type="int" />
+  </EntityType>
   <EntityContainer Name="empModelStoreContainer">
     <EntitySet Name="employe" EntityType="Self.employe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nabin" EntityType="Self.nabin" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

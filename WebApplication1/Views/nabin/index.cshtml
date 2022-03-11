@@ -1,0 +1,35 @@
+﻿
+@model List<WebApplication1.Models.nabin>
+@{
+    ViewBag.Title = "index";
+    int sn = 0;
+}
+<style>
+    .nabin {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 32%, rgba(0,212,255,1) 100%);
+        width: 50%;
+    }
+</style>
+
+<h2>index</h2>
+<table border="1" class="nabin">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var data in Model)
+
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.e_name)</td>
+            <td>@(data.salary)</td>
+        </tr>
+    }
+
+
+
+</table>
+

@@ -7,6 +7,7 @@
       <Diagram DiagramId="1950fc973a2a4a8c8e89294bb979f7c9" Name="Diagram1">
         <EntityTypeShape EntityType="empModel.employe" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="empModel.employee" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="empModel.nabin" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

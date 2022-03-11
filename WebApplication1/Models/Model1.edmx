@@ -21,9 +21,18 @@
           <Property Name="e_name" Type="varchar" MaxLength="20" />
           <Property Name="salaary" Type="int" />
         </EntityType>
+        <EntityType Name="nabin">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="int" Nullable="false" />
+          <Property Name="e_name" Type="varchar" MaxLength="20" />
+          <Property Name="salary" Type="int" />
+        </EntityType>
         <EntityContainer Name="empModelStoreContainer">
           <EntitySet Name="employe" EntityType="Self.employe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nabin" EntityType="Self.nabin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -32,6 +41,7 @@
         <EntityContainer Name="empEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="employes" EntityType="empModel.employe" />
           <EntitySet Name="employees" EntityType="empModel.employee" />
+          <EntitySet Name="nabins" EntityType="empModel.nabin" />
         </EntityContainer>
         <EntityType Name="employe">
           <Key>
@@ -49,7 +59,15 @@
           <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="salaary" Type="Int32" />
         </EntityType>
-      </Schema>
+        <EntityType Name="nabin">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="Int32" Nullable="false" />
+          <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="salary" Type="Int32" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -68,6 +86,15 @@
             <EntityTypeMapping TypeName="empModel.employee">
               <MappingFragment StoreEntitySet="employee">
                 <ScalarProperty Name="salaary" ColumnName="salaary" />
+                <ScalarProperty Name="e_name" ColumnName="e_name" />
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nabins">
+            <EntityTypeMapping TypeName="empModel.nabin">
+              <MappingFragment StoreEntitySet="nabin">
+                <ScalarProperty Name="salary" ColumnName="salary" />
                 <ScalarProperty Name="e_name" ColumnName="e_name" />
                 <ScalarProperty Name="e_id" ColumnName="e_id" />
               </MappingFragment>

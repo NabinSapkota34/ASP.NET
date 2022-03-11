@@ -4,18 +4,27 @@
     <EntitySetMapping Name="employes">
       <EntityTypeMapping TypeName="empModel.employe">
         <MappingFragment StoreEntitySet="employe">
-          <ScalarProperty Name="e_id" ColumnName="e_id" />
-          <ScalarProperty Name="e_name" ColumnName="e_name" />
           <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="e_name" ColumnName="e_name" />
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="employees">
       <EntityTypeMapping TypeName="empModel.employee">
         <MappingFragment StoreEntitySet="employee">
-          <ScalarProperty Name="e_id" ColumnName="e_id" />
-          <ScalarProperty Name="e_name" ColumnName="e_name" />
           <ScalarProperty Name="salaary" ColumnName="salaary" />
+          <ScalarProperty Name="e_name" ColumnName="e_name" />
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nabins">
+      <EntityTypeMapping TypeName="empModel.nabin">
+        <MappingFragment StoreEntitySet="nabin">
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="e_name" ColumnName="e_name" />
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
