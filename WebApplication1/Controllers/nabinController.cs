@@ -11,10 +11,20 @@ namespace WebApplication1.Controllers
     {
         empEntities db = new empEntities();
         // GET: nabin
-        public ActionResult Index()
+        public ActionResult index()
         {
-            List<nabin> all_data = db.nabins.ToList();
+            List<employe> all_data = db.employes.ToList();
             return View(all_data);
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        public ActionResult SaveData(employe employe)
+        {
+            db.employes.Add(employe);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

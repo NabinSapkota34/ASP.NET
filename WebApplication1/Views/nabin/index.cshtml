@@ -1,5 +1,5 @@
 ﻿
-@model List<WebApplication1.Models.nabin>
+@model List<WebApplication1.Models.employe>
 @{
     ViewBag.Title = "index";
     int sn = 0;
@@ -12,6 +12,7 @@
     }
 </style>
 
+<a href="@Url.Action("create")">Create</a>
 <h2>index</h2>
 <table border="1" class="nabin">
     <tr>
