@@ -216,6 +216,8 @@
     <Content Include="Views\Default\Services.cshtml" />
     <Content Include="Views\nabin\index.cshtml" />
     <Content Include="Views\nabin\Create.cshtml" />
+    <Content Include="Views\nabin\Edit.cshtml" />
+    <Content Include="Views\nabin\delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

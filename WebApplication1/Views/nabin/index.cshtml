@@ -6,8 +6,8 @@
 }
 <style>
     .nabin {
-        background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 32%, rgba(0,212,255,1) 100%);
+        background: rgb(34,193,195);
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,202,45,1) 100%);
         width: 50%;
     }
 </style>
@@ -19,15 +19,19 @@
         <th>ID</th>
         <th>Name</th>
         <th>Salary</th>
+        <th>Action</th>
+        <th>Delete</th>
     </tr>
     @foreach (var data in Model)
 
     {
-        <tr>
-            <td>@(++sn)</td>
-            <td>@(data.e_name)</td>
-            <td>@(data.salary)</td>
-        </tr>
+<tr>
+    <td>@(++sn)</td>
+    <td>@(data.e_name)</td>
+    <td>@(data.salary)</td>
+    <td><a href="@Url.Action("Edit", new { id=data.e_id})">Update</a></td>
+    <td><a href="@Url.Action("Delete", new { id=data.e_id})">Delete</a></td>
+</tr>
     }
 
 
