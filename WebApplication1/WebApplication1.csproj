@@ -131,6 +131,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\nabinController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +219,10 @@
     <Content Include="Views\nabin\Create.cshtml" />
     <Content Include="Views\nabin\Edit.cshtml" />
     <Content Include="Views\nabin\delete.cshtml" />
+    <Content Include="Views\Service\Create.cshtml" />
+    <Content Include="Views\Service\Delete.cshtml" />
+    <Content Include="Views\Service\Edit.cshtml" />
+    <Content Include="Views\Service\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
