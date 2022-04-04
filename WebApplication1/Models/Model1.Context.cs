@@ -28,5 +28,7 @@ namespace WebApplication1.Models
         public virtual DbSet<employe> employes { get; set; }
         public virtual DbSet<employee> employees { get; set; }
         public virtual DbSet<nabin> nabins { get; set; }
+        public virtual DbSet<atm> atms { get; set; }
+        public virtual DbSet<salary_details> salary_details { get; set; }
     }
 }

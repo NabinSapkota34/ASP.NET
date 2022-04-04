@@ -1,0 +1,39 @@
+﻿@model List<WebApplication1.Models.salary_details>
+@{
+    ViewBag.Title = "index";
+    int sn = 0;
+}
+<style>
+    .nabin {
+        background: rgb(34,193,195);
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,202,45,1) 100%);
+        width: 50%;
+    }
+</style>
+
+<a href="@Url.Action("create")">Create</a>
+<h2>index</h2>
+<table border="1" class="nabin">
+    <tr>
+        <th>S_ID</th>
+        <th>E_Id</th>
+        <th>SalaryPaid</th>
+        <th>Paiddate</th>
+        <th>Action</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var data in Model)
+
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.salary_paid)</td>
+            <td>@(data.paid_date)</td>
+            <td><a href="@Url.Action("Edit", new { id=data.e_id})">Update</a></td>
+            <td><a href="@Url.Action("Delete", new { id=data.e_id})">Delete</a></td>
+        </tr>
+    }
+
+
+
+</table>

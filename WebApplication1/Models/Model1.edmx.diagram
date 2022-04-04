@@ -8,6 +8,9 @@
         <EntityTypeShape EntityType="empModel.employe" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="empModel.employee" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="empModel.nabin" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="empModel.atm" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="empModel.salary_details" Width="1.5" PointX="5" PointY="6.375" />
+        <AssociationConnector Association="empModel.FK__salary_det__e_id__5DCAEF64" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

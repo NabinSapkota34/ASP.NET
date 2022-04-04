@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="empModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="atm">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="int" Nullable="false" />
+    <Property Name="e_name" Type="varchar" MaxLength="30" />
+    <Property Name="address" Type="varchar" MaxLength="20" />
+    <Property Name="salary" Type="int" />
+  </EntityType>
   <EntityType Name="employe">
     <Key>
       <PropertyRef Name="e_id" />
@@ -24,9 +33,36 @@
     <Property Name="e_name" Type="varchar" MaxLength="20" />
     <Property Name="salary" Type="int" />
   </EntityType>
+  <EntityType Name="salary_details">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" Nullable="false" />
+    <Property Name="e_id" Type="int" />
+    <Property Name="salary_paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__salary_det__e_id__5DCAEF64">
+    <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+    <End Role="salary_details" Type="Self.salary_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="e_id" />
+      </Principal>
+      <Dependent Role="salary_details">
+        <PropertyRef Name="e_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="empModelStoreContainer">
+    <EntitySet Name="atm" EntityType="Self.atm" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="employe" EntityType="Self.employe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nabin" EntityType="Self.nabin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="salary_details" EntityType="Self.salary_details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__salary_det__e_id__5DCAEF64" Association="Self.FK__salary_det__e_id__5DCAEF64">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="salary_details" EntitySet="salary_details" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

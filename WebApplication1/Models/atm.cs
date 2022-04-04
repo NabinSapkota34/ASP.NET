@@ -12,19 +12,11 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class employee
+    public partial class atm
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public employee()
-        {
-            this.salary_details = new HashSet<salary_details>();
-        }
-    
         public int e_id { get; set; }
         public string e_name { get; set; }
-        public Nullable<int> salaary { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<salary_details> salary_details { get; set; }
+        public string address { get; set; }
+        public Nullable<int> salary { get; set; }
     }
 }

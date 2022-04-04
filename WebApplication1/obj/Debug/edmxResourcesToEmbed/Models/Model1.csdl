@@ -4,6 +4,12 @@
     <EntitySet Name="employes" EntityType="empModel.employe" />
     <EntitySet Name="employees" EntityType="empModel.employee" />
     <EntitySet Name="nabins" EntityType="empModel.nabin" />
+    <EntitySet Name="atms" EntityType="empModel.atm" />
+    <EntitySet Name="salary_details" EntityType="empModel.salary_details" />
+    <AssociationSet Name="FK__salary_det__e_id__5DCAEF64" Association="empModel.FK__salary_det__e_id__5DCAEF64">
+      <End Role="employee" EntitySet="employees" />
+      <End Role="salary_details" EntitySet="salary_details" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="employe">
     <Key>
@@ -20,6 +26,7 @@
     <Property Name="e_id" Type="Int32" Nullable="false" />
     <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="salaary" Type="Int32" />
+    <NavigationProperty Name="salary_details" Relationship="empModel.FK__salary_det__e_id__5DCAEF64" FromRole="employee" ToRole="salary_details" />
   </EntityType>
   <EntityType Name="nabin">
     <Key>
@@ -29,4 +36,35 @@
     <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="salary" Type="Int32" />
   </EntityType>
+  <EntityType Name="atm">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="Int32" Nullable="false" />
+    <Property Name="e_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="salary" Type="Int32" />
+  </EntityType>
+  <EntityType Name="salary_details">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" Nullable="false" />
+    <Property Name="e_id" Type="Int32" />
+    <Property Name="salary_paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="employee" Relationship="empModel.FK__salary_det__e_id__5DCAEF64" FromRole="salary_details" ToRole="employee" />
+  </EntityType>
+  <Association Name="FK__salary_det__e_id__5DCAEF64">
+    <End Type="empModel.employee" Role="employee" Multiplicity="0..1" />
+    <End Type="empModel.salary_details" Role="salary_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="e_id" />
+      </Principal>
+      <Dependent Role="salary_details">
+        <PropertyRef Name="e_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
