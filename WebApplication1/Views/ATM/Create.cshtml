@@ -7,6 +7,8 @@
 
 <h1>Create</h1>
 <form class="nabin" action="SaveData">
+    <label class="col-md-2">Employee_Name</label>
+    @Html.DropDownList("employeeList", null, "Select", htmlAttributes: new { @Name = "e_id", @class = "form-control" })
     <label class="col-md-2">S_Id</label>
     <div class="col-md-4">
         <input type="text" name="s_id" class="form-control" />

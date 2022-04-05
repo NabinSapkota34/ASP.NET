@@ -18,6 +18,8 @@ namespace WebApplication1.Controllers
         }
         public ActionResult Create()
         {
+            var empList=db.employees.ToList();
+            ViewBag.employeeList = new SelectList(empList, "e_id", "e_name");
             return View();
         }
         public ActionResult Edit(int id)
