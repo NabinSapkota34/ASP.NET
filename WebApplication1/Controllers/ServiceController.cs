@@ -25,6 +25,8 @@ namespace WebApplication1.Controllers
         public ActionResult Edit(int id)
         {
             nabin data = db.nabins.Find(id);
+            var empList = db.nabins.ToList();
+            ViewBag.employeeList = new SelectList(empList, "e_id", "e_name");
             return View(data);
         }
         public ActionResult SaveData(nabin nabin)

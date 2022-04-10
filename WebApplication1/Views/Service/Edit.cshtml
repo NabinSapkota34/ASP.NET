@@ -10,6 +10,8 @@
 
 @using (Html.BeginForm("UpdateData", null))
 {
+    <label class="col-md-2">Salary</label>
+    @Html.DropDownList("employeeList", null, "Select", htmlAttributes: new { @Name = "e_name", @class = "form-control" })
     <input type="hidden" name="e_id" class="form-control" value="@(Model.e_id)" />
     <label class="col-md-2">Name</label>
     <div class="col-md-4">

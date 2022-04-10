@@ -18,13 +18,15 @@ namespace WebApplication1.Controllers
         }
         public ActionResult Create()
         {
-            var empList=db.employees.ToList();
+            var empList=db.employes.ToList();
             ViewBag.employeeList = new SelectList(empList, "e_id", "e_name");
             return View();
         }
         public ActionResult Edit(int id)
         {
             salary_details data = db.salary_details.Find(id);
+            var empList = db.employes.ToList();
+            ViewBag.employeeList = new SelectList(empList, "e_id", "e_name");
             return View(data);
         }
         public ActionResult SaveData(salary_details salary_details)
@@ -44,15 +46,11 @@ namespace WebApplication1.Controllers
         }
         public ActionResult delete(int id)
         {
-            salary_details data = db.salary_details.Find(id);
-            return View(data);
-        }
-        public ActionResult DeleteData(salary_details salary_details)
-        {
-            salary_details delete = db.salary_details.Find(salary_details.e_id);
+            salary_details delete = db.salary_details.Find(id);
             db.salary_details.Remove(delete);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+       
     }
 }

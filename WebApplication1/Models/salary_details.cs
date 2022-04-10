@@ -19,6 +19,6 @@ namespace WebApplication1.Models
         public Nullable<decimal> salary_paid { get; set; }
         public Nullable<System.DateTime> paid_date { get; set; }
     
-        public virtual employee employee { get; set; }
+        public virtual employe employe { get; set; }
     }
 }

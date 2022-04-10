@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="empModelStoreContainer" CdmEntityContainer="empEntities">
+    <EntitySetMapping Name="atms">
+      <EntityTypeMapping TypeName="empModel.atm">
+        <MappingFragment StoreEntitySet="atm">
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="e_name" ColumnName="e_name" />
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="employes">
       <EntityTypeMapping TypeName="empModel.employe">
         <MappingFragment StoreEntitySet="employe">
@@ -23,16 +33,6 @@
       <EntityTypeMapping TypeName="empModel.nabin">
         <MappingFragment StoreEntitySet="nabin">
           <ScalarProperty Name="salary" ColumnName="salary" />
-          <ScalarProperty Name="e_name" ColumnName="e_name" />
-          <ScalarProperty Name="e_id" ColumnName="e_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="atms">
-      <EntityTypeMapping TypeName="empModel.atm">
-        <MappingFragment StoreEntitySet="atm">
-          <ScalarProperty Name="salary" ColumnName="salary" />
-          <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="e_name" ColumnName="e_name" />
           <ScalarProperty Name="e_id" ColumnName="e_id" />
         </MappingFragment>

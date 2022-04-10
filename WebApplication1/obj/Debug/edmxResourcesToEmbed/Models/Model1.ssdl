@@ -37,16 +37,16 @@
     <Key>
       <PropertyRef Name="s_id" />
     </Key>
-    <Property Name="s_id" Type="int" Nullable="false" />
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="e_id" Type="int" />
     <Property Name="salary_paid" Type="decimal" Precision="18" Scale="2" />
     <Property Name="paid_date" Type="datetime" />
   </EntityType>
-  <Association Name="FK__salary_det__e_id__5DCAEF64">
-    <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+  <Association Name="FK__salary_det__e_id__76969D2E">
+    <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
     <End Role="salary_details" Type="Self.salary_details" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="employee">
+      <Principal Role="employe">
         <PropertyRef Name="e_id" />
       </Principal>
       <Dependent Role="salary_details">
@@ -60,8 +60,8 @@
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nabin" EntityType="Self.nabin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="salary_details" EntityType="Self.salary_details" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__salary_det__e_id__5DCAEF64" Association="Self.FK__salary_det__e_id__5DCAEF64">
-      <End Role="employee" EntitySet="employee" />
+    <AssociationSet Name="FK__salary_det__e_id__76969D2E" Association="Self.FK__salary_det__e_id__76969D2E">
+      <End Role="employe" EntitySet="employe" />
       <End Role="salary_details" EntitySet="salary_details" />
     </AssociationSet>
   </EntityContainer>

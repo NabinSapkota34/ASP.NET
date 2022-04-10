@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1950fc973a2a4a8c8e89294bb979f7c9" Name="Diagram1">
-        <EntityTypeShape EntityType="empModel.employe" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="empModel.employee" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="empModel.nabin" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="empModel.atm" Width="1.5" PointX="3.375" PointY="3.75" />
-        <EntityTypeShape EntityType="empModel.salary_details" Width="1.5" PointX="5" PointY="6.375" />
-        <AssociationConnector Association="empModel.FK__salary_det__e_id__5DCAEF64" />
+        <EntityTypeShape EntityType="empModel.atm" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="empModel.employe" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="empModel.employee" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="empModel.nabin" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="empModel.salary_details" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="empModel.FK__salary_det__e_id__76969D2E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
