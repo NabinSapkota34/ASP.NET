@@ -11,6 +11,12 @@ namespace WebApplication1.Controllers
     {
         empEntities db = new empEntities();
         // GET: ATM
+        [HttpPost]
+        public ActionResult Index(DateTime dat, DateTime datt)
+        {
+            var results =db.salary_details.Where(x => x.paid_date >= dat && x.paid_date <= datt).ToList();
+            return View(results);
+        }
         public ActionResult Index()
         {
             List<salary_details> all_data = db.salary_details.ToList();

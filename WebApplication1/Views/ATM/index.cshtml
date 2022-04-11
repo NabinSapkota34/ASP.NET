@@ -10,31 +10,44 @@
         width: 50%;
     }
 </style>
+@using (Html.BeginForm("index", "ATM", FormMethod.Post))
+{
+    <a href="@Url.Action("create")">Add a new record</a>
+    <input type="date" name="dat" value="" class="datee" />
+    <input type="date" name="datt" value="" class="datee" />
+    <input type="submit" value="Search" class="button" />
+    <br />
+    <br />
 
-<a href="@Url.Action("create")">Create</a>
-<h2>index</h2>
-<table border="1" class="nabin">
-    <tr>
-        <th>S_ID</th>
-        <th>E_Id</th>
-        <th>SalaryPaid</th>
-        <th>Paiddate</th>
-        <th>Action</th>
-        <th>Delete</th>
-    </tr>
-    @foreach (var data in Model)
+    <a href="@Url.Action("create")">Create</a>
+    <h2>index</h2>
+    <table border="1" class="nabin">
+        <tr>
+            <th>S_ID</th>
+            <th>E_Id</th>
+            <th>SalaryPaid</th>
+            <th>Paiddate</th>
+            <th>Action</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var data in Model)
 
-    {
-<tr>
-    <td>@(++sn)</td>
-    <td>@(data.salary_paid)</td>
-    <td>@(data.paid_date)</td>
-    <td>@(data.e_id)</td>
-    <td><a href="@Url.Action("Edit", new { id=data.s_id})">Update</a></td>
-    <td><a href="@Url.Action("Delete", new { id=data.s_id})">Delete</a></td>
-</tr>
-    }
+        {
+            <tr>
+                <td>@(++sn)</td>
+                <td>@(++sn)</td>
+                <td>@(data.salary_paid)</td>
+                <td>@(data.paid_date)</td>
+                <td>@(data.e_id)</td>
+                <td><a href="@Url.Action("Edit", new { id = data.s_id })">Update</a></td>
+                <td><a href="@Url.Action("Delete", new { id = data.s_id })">Delete</a></td>
+            </tr>
+        }
+        <tr>
+            <td>Total</td>
+            <td colspan="2">@Model.Sum(x => x.salary_paid)</td>
+        </tr>
 
 
-
-</table>
+    </table>
+}
